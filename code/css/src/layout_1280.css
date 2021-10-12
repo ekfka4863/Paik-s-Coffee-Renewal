@@ -1,6 +1,12 @@
 @charset "UTF-8";
 /* layout_1280.css*/
-
+@font-face {
+  font-family: '양진체';
+  src: url('https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff');
+  src: url('../../font/양진체v0.9_ttf.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* design
 ============================================= */
@@ -21,7 +27,7 @@ body {
 
 #headBox {
   position: fixed;
-  z-index: 9999;
+  z-index: 10;
 
   /* width: 1280px; */
   width: 100%;
@@ -31,67 +37,67 @@ body {
   box-sizing: border-box;
   background-color: #fff;
 }
-.head_box_inner {
-  width: 1280px;
-  height: 100%;
-  margin: auto;
-  /* background-color: #faf; */
-}
-  /* h1 */
-  .head_box_inner > h1 {
-    float: left;
-
-    width: 220px;
-    height: 130px;
-    background: url(../../images/logo_1280.svg) no-repeat center;
-    /* background-color: #fee; */
-  }
-  h1 > a {
-    display: block;
-    width: 100%;
+  .head_box_inner {
+    width: 1280px;
     height: 100%;
-    /* background-color: #fee; */
+    margin: auto;
+    /* background-color: #faf; */
   }
+    /* h1 */
+    .head_box_inner > h1 {
+      float: left;
+
+      width: 220px;
+      height: 130px;
+      background: url(../../images/logo_1280.svg) no-repeat center;
+      /* background-color: #fee; */
+    }
+      h1 > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        /* background-color: #fee; */
+      }
   
   /* navigation */
-  nav {
+  .navigation {
     float: right;
   }
-  .gnb {
-    padding: 45px 0px;
-    box-sizing: border-box;
-  }
-  .gnb li {
-    float: left;
-    width: 100px;
-    height: 40px;
-    margin-right: 15px;
-    text-align: center;
-    /* line-height: 40px; */
-    line-height: 55px;
-    /* background-color: #ccc; */
-  }
-  .gnb li:first-child {
-    margin-left: 55px;
-  }
-  .gnb li:last-child {
-    width: 40px;
-    height: 40px;
-    margin-right: 0;
-    cursor: pointer;
-    /* background: url(../../images/search_icon.svg) no-repeat center; */
-  }
-    .gnb li a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      font-size: 19.2px;
-      color: #0b1f60;
-      /* background-color: #a9a9a9; */
+    .gnb {
+      padding: 45px 0px;
+      box-sizing: border-box;
     }
-    .gnb li:last-of-type a {
-      font-size: 24px;
+    .gnb li {
+      float: left;
+      width: 100px;
+      height: 40px;
+      margin-right: 15px;
+      text-align: center;
+      /* line-height: 40px; */
+      line-height: 55px;
+      /* background-color: #ccc; */
     }
+    .gnb li:first-child {
+      margin-left: 55px;
+    }
+    .gnb li:last-child {
+      width: 40px;
+      height: 40px;
+      margin-right: 0;
+      cursor: pointer;
+      /* background: url(../../images/search_icon.svg) no-repeat center; */
+    }
+      .gnb li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-size: 19.2px;
+        color: #0b1f60;
+        /* background-color: #a9a9a9; */
+      }
+      .gnb li:last-of-type a {
+        font-size: 24px;
+      }
 
 
 /* #viewBox 
@@ -131,7 +137,7 @@ body {
         right: 0;
         background: url(../../images/next_btn.svg) no-repeat center;
       }
-      .view_box_indicator_bar {
+      .view_box_indicator {
         position: absolute;
         bottom: -50px;
         left: 557px;
@@ -196,6 +202,9 @@ body {
         margin-bottom: 78px;
         background-color: #a9a9a9;
       }  
+      /* 버튼은 인라인의 개념이라... 인라인의 개념들은 포커스가 걸리면 자꾸 튄다.
+        그러니까 이런 버튼의 특징을 고려하여 앱솔루트로 포지셔닝을 걸어버리면 더 튀니까...
+        Practice_11 (slide banner) 파일 참고해서 고치기 ...  */
         .product_box_img_1 button, 
         .product_box_img_2 button { 
           position: absolute;
@@ -217,7 +226,7 @@ body {
   /* #eventBox */
   #eventBox {
     width: 100%;
-    height: 300px;
+    height: 1200px;
     background-color: #ccc;
   }
     #eventBox h2 {
@@ -294,6 +303,9 @@ body {
     .often_searched_btns_inner button:nth-child(1) {
       float: left;
     }
+    /* 버튼은 인라인의 개념이라... 인라인의 개념들은 포커스가 걸리면 자꾸 튄다.
+        그러니까 이런 버튼의 특징을 고려하여 앱솔루트로 포지셔닝을 걸어버리면 더 튀니까...
+        Practice_11 (slide banner) 파일 참고해서 고치기 ...  */
     .often_searched_btns_inner button:nth-child(2) {
       position: absolute;
       top: 50%;
@@ -316,8 +328,8 @@ body {
   background-color: #ccc;
 }
   #footBox h2 {
-    width: 400px;
-    height: 80px;
+    width: 350px;
+    height: 70px;
     margin: 40px auto;
     background: url(../../images/the_born_logo_1200_1440_1920.svg) no-repeat center;
   }
@@ -364,6 +376,9 @@ body {
         margin: 20px 25px;
         background-color: #eee;
       }
+      /* 버튼은 인라인의 개념이라... 인라인의 개념들은 포커스가 걸리면 자꾸 튄다.
+        그러니까 이런 버튼의 특징을 고려하여 앱솔루트로 포지셔닝을 걸어버리면 더 튀니까...
+        Practice_11 (slide banner) 파일 참고해서 고치기 ...  */
         .sns_icon_set button {
           position: absolute;
           top: 0;

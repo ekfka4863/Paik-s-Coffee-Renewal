@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- ayout_1440.html -->
+<!-- ayout_1280.html -->
 <html lang="ko-KR" class="no-js">
 <head>
   <meta charset="UTF-8">
@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script src="../js/common/modernizr-custom.js"></script>
-
   <!-- font:   https://fonts.google.com/specimen/Sunflower?preview.text_type=custom&preview.text=%EB%B9%BD%EB%8B%A4%EB%B0%A9%20%ED%99%98%EC%98%81%ED%95%A9%EB%8B%88%EB%8B%A4!%20&subset=korean -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet"> -->
+
   <link rel="stylesheet" href="../fontawesome/css/all.min.css">
 
   <link rel="stylesheet" href="../css/common/variable.css">
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../css/common/common.css">
 
   <link rel="stylesheet" href="../css/src/layout_1280.css">
-  <link rel="stylesheet" href="../css/src/layout_1280_new_ver.css">
+  <!-- <link rel="stylesheet" href="../css/src/layout_1280_new_ver.css"> -->
 
   <title>Paik's Coffee (1280px)</title>
   
@@ -40,8 +40,11 @@
               <span class="blind">빽다방</span>
             </a>
           </h1>
-          <nav>
+          <!-- 네비게이션 -->
+          <nav class="navigation">
             <h2 class="blind">navigation</h2>
+
+            <!-- .gnb -->
             <ul class="gnb clearfix">
               <li><a href="#">빽다방</a></li>
               <li><a href="#">메뉴</a></li>
@@ -50,60 +53,64 @@
               <li><a href="#">창업안내</a></li>
               <li><a href="#">고객의 소리</a></li>
               <li><a href="#">제휴업체</a></li>
-              <li>
-                <a href="#">
-                  <span class="blind">검색</span>
-                  <i class="fas fa-search"></i>
-                </a>
-              </li>
             </ul>
-          </nav>
+
+            <!-- .search_box -->
+            <div class="search_box">
+              <div class="search_btn">
+                <button type="button"><i class="fas fa-search"></i><span class="blind">검색</span></button>
+                <div class="search_box_etc none">
+                  검색에 관련된 내용 작성
+                </div>
+              </div>
+            </div>
+          </nav><!-- // .navigation -->
+
         </div>
       </header>
 
       <!-- #viewBox -->
       <section id="viewBox">
         <h2 class="blind">viewBox</h2>
+
         <div class="view_box_inner">
-          <div class="view_box_img">
-            <button type="button" class="prev_btn">
-              <!-- <img src="../images/prev_btn.svg" alt=""> -->
-              <span class="blind">이전 이미지 버튼</span>
-            </button>
+          <!-- 버튼:  .view_box_btn -->
+          <div class="view_box_btn">
             <button type="button" class="next_btn">
-              <!-- <img src="../images/next_btn.svg" alt=""> -->
               <span class="blind">다음 이미지 버튼</span>
             </button>
+            <button type="button" class="prev_btn">
+              <span class="blind">이전 이미지 버튼</span>
+            </button>
           </div>
-          <div class="view_box_indicator_bar clearfix">
-            <div class="indicator_circle showing">
-              <a href="#">
-                <span class="blind">슬라이드 이미지 1</span>
-              </a>
-            </div>
-            <div class="indicator_circle">
-              <a href="#">
-                <span class="blind">슬라이드 이미지 2</span>
-              </a>
-            </div>
-            <div class="indicator_circle">
-              <a href="#">
-                <span class="blind">슬라이드 이미지 3</span>
-              </a>
-            </div>
-            <div class="indicator_circle">
-              <a href="#">
-                <span class="blind">슬라이드 이미지 4</span>
-              </a>
-            </div>
-            <div class="indicator_circle">
-              <a href="#">
-                <span class="blind">슬라이드 이미지 5</span>
-              </a>
-            </div>
+
+          <!-- 인디케이터:  .view_box_indicator > ul.indicator_list > li * 갯수 > a > span.blind -->
+          <div class="view_box_indicator clearfix">
+            <ul class="indicator_list">
+              <li class="showing"><a href="#slide_01"><span class="blind">indicator_01</span></a></li>
+              <li><a href="#slide_02"><span class="blind">indicator__02</span></a></li>
+              <li><a href="#slide_03"><span class="blind">indicator__03</span></a></li>
+              <li><a href="#slide_04"><span class="blind">indicator__04</span></a></li>
+              <li><a href="#slide_05"><span class="blind">indicator__05</span></a></li>
+            </ul>
           </div>
-        </div>
-      </section>
+
+          <!-- 슬라이드 이미지:  .slide_content -->
+          <div class="slide_content">
+            <div class="slide_con_inner">
+              <!-- div#slide_0$*5>a[href=#]{slide_0$} -->
+              <!-- 실제로 이미지가 담기는 div들... -->
+              <div id="slide_01" class="showing"><a href="#">slide_01</a></div>
+              <div id="slide_02"><a href="#">slide_02</a></div>
+              <div id="slide_03"><a href="#">slide_03</a></div>
+              <div id="slide_04"><a href="#">slide_04</a></div>
+              <div id="slide_05"><a href="#">slide_05</a></div>
+            </div><!-- // .slide_con_inner -->
+          </div><!-- // .slide_content -->
+          
+        </div><!-- // .view_box_inner -->
+      </section><!-- // #viewBox -->
+
 
       <!-- #mainBox -->
       <main id="mainBox">
@@ -112,23 +119,61 @@
           <!-- #productBox -->
           <article id="productBox">
             <h2>Product</h2>
-            <div class="product_box_img_1">
-              <button type="button" class="prev_btn">
-                <span class="blind">이전 상품 보기 버튼</span>
-              </button>
-              <button type="button" class="next_btn">
-                <span class="blind">다음 상품 보기 버튼</span>
-              </button>
+
+            <!-- 신메뉴 -->
+            <div class="product_box_new">
+              <!-- .product_box_btn -->
+              <div class="product_box_btn">
+                <button type="button" class="next_btn">
+                  <span class="blind">다음 상품 버튼</span>
+                </button>
+                <button type="button" class="prev_btn">
+                  <button>
+                  <span class="blind">이전 상품 버튼</span>
+                </button>
+              </div>
+              <div class="product_content">
+                <div class="product_con_inner">
+                  <!-- 질문!!!! flip을 할거면...?? Html 구조는 어떻게?? -->
+                  <!-- (div#slide_0$>a[href=#]{slide_$$})*5 -->
+                  <div class="product_01 flipped"><a href="#">product_01</a></div>
+                  <div class="product_02"><a href="#">product_02</a></div>
+                  <div class="product_03"><a href="#">product_03</a></div>
+                  <div class="product_04"><a href="#">product_04</a></div>
+                  <div class="product_05"><a href="#">product_05</a></div>
+                </div>
+              </div>
+            </div><!-- // .product_box_new -->
+
+            <!-- 인기메뉴 -->
+            <div class="product_box_best">
+              <!-- .product_box_btn -->
+              <div class="product_box_btn">
+                <button type="button" class="next_btn">
+                  <span class="blind">다음 상품 버튼</span>
+                </button>
+                <button type="button" class="prev_btn">
+                  <button>
+                  <span class="blind">이전 상품 버튼</span>
+                </button>
+              </div>
+              <div class="product_content">
+                <div class="product_con_inner">
+                  <!-- 질문!!!! flip을 할거면...?? Html 구조는 어떻게?? -->
+                  <!-- (div#slide_0$>a[href=#]{slide_$$})*5 -->
+                  <div class="product_01 flipped"><a href="#">product_01</a></div>
+                  <div class="product_02"><a href="#">product_02</a></div>
+                  <div class="product_03"><a href="#">product_03</a></div>
+                  <div class="product_04"><a href="#">product_04</a></div>
+                  <div class="product_05"><a href="#">product_05</a></div>
+                </div>
+              </div>
+            </div><!-- // .product_box_best -->
+
             </div>
-            <div class="product_box_img_2">
-              <button type="button" class="prev_btn">
-                <span class="blind">이전 상품 보기 버튼</span>
-              </button>
-              <button type="button" class="next_btn">
-                <span class="blind">다음 상품 보기 버튼</span>
-              </button>
-            </div>
-          </article>
+          </article><!-- // #productBox -->
+
+
           <!-- #eventBox -->
           <article id="eventBox">
             <h2>Event</h2>
@@ -136,18 +181,35 @@
           <!-- #snsBox -->
           <article id="snsBox">
             <h2>SNS</h2>
+            <div class="sns_box_inner">
+              <h3><span class="blind">sns 구경하기</span></h3>
+
+              <!-- 미정 -->
+              <!-- <div class="sns_content">
+                <div class="sns_con_wrapper">
+                  <div><span class="blind">sns_con_01</span></div>
+                  <div><span class="blind">sns_con_02</span></div>
+                  <div><span class="blind">sns_con_03</span></div>
+                </div>
+              </div> -->
+
+            </div>
           </article>
+
+
           <!-- #familysitesBox -->
           <article id="familysitesBox">
             <h2 class="blind">familysitesBox</h2>
             <div class="familysites_box_inner">
+              <h3><span class="blind">패밀리 사이트 바로가기</span></h3>
               <ul class="clearfix">
-                <li class="familysite"><a href="#">familysite_01</a></li>
-                <li class="familysite"><a href="#">familysite_02</a></li>
-                <li class="familysite"><a href="#">familysite_03</a></li>
-                <li class="familysite"><a href="#">familysite_04</a></li>
-                <li class="familysite"><a href="#">familysite_05</a></li>
-                <li class="familysite"><a href="#">familysite_06</a></li>
+                <li class="familysite"><a href="#"><span class="blind">familysite_01</span></a></li>
+                <li class="familysite"><a href="#"><span class="blind">familysite_02</span></a></li>
+                <li class="familysite"><a href="#"><span class="blind">familysite_03</span></a></li>
+                <li class="familysite"><a href="#"><span class="blind">familysite_04</span></a></li>
+                <li class="familysite"><a href="#"><span class="blind">familysite_05</span></a></li>
+                <li class="familysite"><a href="#"><span class="blind">familysite_06</span></a></li>
+                <!-- 아래 더 있을 예정... 슬라이드로 처리할 예정... -->
               </ul>
             </div>
           </article>
@@ -159,10 +221,10 @@
       <aside id="oftenSearchedBtns">
         <h2 class="blind">oftenSearchedBtns</h2>
         <div class="often_searched_btns_inner clearfix">
-          <button type="button"><span>매장찾기</span></button>
-          <button type="button"><span>창업안내</span></button>
-          <button type="button"><span>고객안내</span></button>
-        </div>
+          <a href="#"><span>매장찾기</span></a>
+          <a href="#"><span>창업안내</span></a>
+          <a href="#"><span>고객안내</span></a>
+        </div> 
       </aside>
 
       <!-- #footBox -->
@@ -170,7 +232,7 @@
         <div class="foot_box_inner clearfix">
           <h2>
             <a href="#">
-              <span class="blind">footBox</span>
+              <span class="blind">더본코리아</span>
             </a>
           </h2>
           <div class="foot_box_content clearfix">
@@ -180,9 +242,15 @@
                 <button type="button" class="drop_down_menu_icon"></button>
               </div>
               <div class="sns_icon_set clearfix">
-                <button type="button" class="chat_icon"></button>
-                <button type="button" class="facebook_icon"></button>
-                <button type="button" class="instagram_icon"></button>
+                <a href="https://center-pf.kakao.com/m/login" class="chat_icon">
+                  <span class="blind">카카오톡 빽다방 채널 바로가기</span>
+                </a>
+                <a href="https://m.facebook.com/ipaikscoffee/?locale2=ms_MY&__tn__=C-R" class="facebook_icon">
+                  <span class="blind">페이스북 빽다방 계정 바로가기</span>
+                </a>
+                <a href="https://www.instagram.com/paikscoffee_official/?hl=ko" class="instagram_icon">
+                  <span class="blind">인스타그램 빽다방 계정 바로가기</span>
+                </a>
               </div>
             </div>
             <address>&copy; All rights reserved ...</address>
