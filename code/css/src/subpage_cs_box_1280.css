@@ -11,6 +11,14 @@
 
 
 /* common.css */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+a:focus {
+  outline: 8px dotted dodgerblue;
+}
+
 html, body {
   width: 100%;
   height: 100%;
@@ -617,7 +625,7 @@ address {
 
 .cs_report_form {
   position: absolute;
-  top: 327px;
+  top: calc(327px + 130px);
   left: 50%;
   transform: translate(-50%);
   z-index: 999;
@@ -630,6 +638,7 @@ address {
   .cs_report_form form {
     width: 100%;
     height: 100%;
+    height: 2050px;
     border-radius: 10px;
     background-color: #fff;
   }
@@ -662,8 +671,36 @@ address {
 
     /* input + label -> wrapper 역할의 div들... */
     .form_detail {
+      position: relative;
+
       margin: 40px 0px 0px 3px;
     }
+    /* 폼태그 label 스타일링 */
+    .form_detail label {
+      margin-left: 3px;
+    }
+    /* 가상요소로 별 첨부하기! */
+    .form_detail label[for="userName"],
+    .form_detail label[for="userPhone"],
+    .form_detail label[for="userEmail"],
+    .form_detail .form_detail_title,
+    .form_detail label[for="userBranch"],
+    .form_detail label[for="occurrenceSelectYear"],
+    .form_detail label[for="userTitle"],
+    .form_detail label[for="userContent"],
+    .form_detail label[for="userFile"] {
+      /* position: relative; */
+      display: inline-block;
+      font-weight: 700;
+      margin-top: 8px;
+      /* background-color: #fda; */
+    }
+    .form_detail_title.occurence{
+      margin-top: 19px;
+      /* background-color: #fad; */
+    }
+    
+    /* input 스타일링 */
     .form_detail input[type="text"],
     .form_detail input[type="tel"],
     .form_detail input[type="email"],
@@ -673,11 +710,120 @@ address {
       border-radius: 5px;
       background-color: #f3f4f7;
     }
+    .form_detail input[type="button"] {
+      width: 130px;
+      height: 40px;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 20px;
+      text-align: center;
+      line-height: 20px;
+      color: #061F60;
+      cursor: pointer;
+      background: rgba(179, 223, 255, 0.57);
+    }
     .form_detail textarea {
       width: 564px;
       height: 220px;
     }
-    /* .form_agreement_inner label {} */
+
+    /* 파일첨부 */
+    .form_detail_div .file_upload {
+      margin: 0;
+    }
+      /* input 파일의 기존 디자인 없애기 */
+      .file_upload > label[for="userFile"] {
+        display: inline-block;
+        width: 564px;
+        height: 40px;
+        margin: 0;
+        margin-top: -10px;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: #f3f4f7;
+      }      
+      /* 팁!
+      대신 파일 첨부란에 input 태그 말고 label 태그에 focus가 갈 것이기 때문에
+      :focus시 Outline 속성만 따로 스타일링 해준다!  */
+      #userFile:focus + label {
+        /* outline: 3px solid #0df; */
+        outline: 8px dotted dodgerblue;
+      } 
+
+    /* input의 각기 다른 width값 */
+    #userName {
+      width: 215px;
+    }
+    #userBranch, #userTitle {
+      width: 564px;
+    }
+    #userPhone, #userEmail, #userEmailSite {
+      width: 300px;
+    }
+
+    /* input 위치 */
+    .user_email_address {
+      position: absolute;
+      top: 0;
+      left: 450px;
+    }
+    .user_email_address #userEmailSite {
+      margin-left: 15px;
+      color: #494949;
+    }
+
+    .form_detail input[type="text"],
+    .form_detail input[type="tel"],
+    .form_detail input[type="email"] {
+      position: absolute;
+      top: 0;
+      left: 130px;
+    }
+    .form_detail input[type="button"] {
+      position: absolute;
+      top: 0;
+    }
+    #verificationBtn {
+      left: 390px;
+    }
+    #userBranchSearchBtn {
+      left: 740px;
+    }
+
+
+
+    /* 문의유형/답변알림서비스 - 체크박스 스타일링 */
+    .form_detail [type="radio"] + label {
+      margin-right: 65px;
+    }
+    .form_detail [type="radio"]:checked {
+
+    }
+
+    .form_detail_div {
+      position: absolute;
+      top: 0;
+      left: 130px;
+      
+      display: inline-block;
+
+      width: auto;
+      height: auto;
+    }
+    .form_detail:nth-child(10) {
+      min-height: 220px;
+    }
+    .form_detail_div:nth-of-type(1),
+    .form_detail_div:nth-of-type(2) {
+      margin-top: 8px;
+    }
+      .form_detail_div select {
+        width: 90px;
+        color: #494949;
+      }
+      .form_detail_div label {
+        margin: 0px 20px 0px 3px;
+      }
       
 
 
@@ -712,27 +858,46 @@ address {
   .form_agreement_inner {
     /* background-color: #efa; */
   }
-    .form_agreement_inner span {
+    .form_agreement_inner > span {
       display: inline-block;
       /* margin: 30px 0px 30px 3px; */
       margin: 30px 0px;
+      margin-top: 100px;
       font-weight: bold;
       font-size: 20px;
       line-height: 20px;
     }
-    .form_agreement_inner button {
-      border-radius: 5px;
-      border: 1px solid #ddd;
-      background-color: #fff;
-    }
-    .form_agreement_inner p {
-      width: 562px;
-      height: 220px;
-      padding: 15px;
-      box-sizing: border-box;
-    }
-      .form_agreement_inner .red_text {
-        font-size: 16px;
-        color: #ff0000;
+      .agreement_details > div:nth-child(1) {
+        margin: 0;
       }
+      .agreement_details > div {
+        float: left;
+        margin-left: 23px;
+      }
+        .form_agreement_inner > div button {
+          padding: 10px 5px;
+          border-radius: 5px;
+          border: 1px solid #ddd;
+          color: #494949;
+          background-color: #fff;
+        }
+        .form_agreement_inner > div p {
+          width: 562px;
+          height: auto;
+          max-height: 220px;
+          margin-bottom: 15px;
+          padding: 15px;
+          box-sizing: border-box;
+          color: #a9a9a9;
+          background-color: #f3f4f7;
+        }
+          .form_agreement_inner .red_text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ff0000;
+          }
+        label[for="userAgree1"],
+        label[for="userAgree2"] {
+          margin-right: 60px;
+        }
 

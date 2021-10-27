@@ -284,6 +284,9 @@
               <div class="form_detail">
                 <label for="userName">성함</label>
                 <input type="text" id="userName" name="user__Name" value="" required />
+                <!-- <button type="button">본인인증</button> -->
+                <!-- <input type="button" name="verification__btn" id="verificationBtn" value="본인인증" onclick="alert('본인인증이 완료되어있습니다')" /> -->
+                <input type="button" name="verification__btn" id="verificationBtn" value="본인인증" />
               </div>
               <div class="form_detail">
                 <label for="userPhone">휴대폰</label>
@@ -292,120 +295,144 @@
               <div class="form_detail">
                 <label for="userEmail">이메일</label>
                 <input type="email" id="userEmail" name="user__Email" value="" required />
-              </div>
-              <div class="form_detail">문의유형
-                <input type="checkbox" id="userInquiryType1" name="user__InquiryType1" value="" />
-                <label for="userInquiryType1">칭찬</label>
-                <input type="checkbox" id="userInquiryType2" name="user__InquiryType2" value="" />
-                <label for="userInquiryType2">불만</label>
-                <input type="checkbox" id="userInquiryType3" name="user__InquiryType3" value="" />
-                <label for="userInquiryType3">제안</label>
-              </div>
-              <div class="form_detail">답변 알림 서비스
-                <input type="checkbox" id="userAnwserNo" name="user__AnswerNo" value="" />
-                <label for="userAnwserNo">받지않음</label>
-                <input type="checkbox" id="userAnwser1" name="user__Answer1" value="" />
-                <label for="userAnwser1">문자 답변</label>
-                <input type="checkbox" id="userAnwser2" name="user__Answer2" value="" />
-                <label for="userAnwser2">이메일 답변</label>
-                <input type="checkbox" id="userAnwser3" name="user__Answer3" value="" />
-                <label for="userAnwser3">전화 답변</label>
+                <div class="user_email_address">
+                  <label for="userEmailSite">&#64;</label>
+                  <select name="user__EmailSite" id="userEmailSite">
+                    <option value="">선택</option>
+                    <option value="gmail.com">gmail.com</option>
+                    <option value="naver.com">naver.com</option>
+                    <option value="daum.net">daum.net</option>
+                    <option value="kakaotalk.com">kakaotalk.com</option>
+                  </select>
+                </div>
               </div>
               <div class="form_detail">
-                <label for="occurrenceSelectYear">발생일시</label>
-                <!-- 년 -->
-                <select name="occurrence__SelectYear" id="occurrenceSelectYear">
-                  <option value="">선택</option>
-                  <option value="2020">2020</option>
-                  <option value="2019">2019</option>
-                  <option value="2018">2018</option>
-                </select>
-                <label for="occurrenceSelectYear">년</label>
-                <!-- 월 -->
-                <select name="occurrence__SelectMonth" id="occurrenceSelectMonth">
-                  <option value="">선택</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                </select>
-                <label for="occurrenceSelectMonth">월</label>
-                <!-- 일 -->
-                <select name="occurrence__SelectDay" id="occurrenceSelectDay">
-                  <option value="">선택</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                  <option value="23">23</option>
-                  <option value="24">24</option>
-                  <option value="25">25</option>
-                  <option value="26">26</option>
-                  <option value="27">27</option>
-                  <option value="28">28</option>
-                  <option value="29">29</option>
-                  <option value="30">30</option>
-                  <option value="31">31</option>
-                </select>
-                <label for="occurrenceSelectDay">일</label>
-                <!-- 구분선 :after 처리 -->
-                <!-- 시 -->
-                <select name="occurrence__SelectHour" id="occurrenceSelectHour">
-                  <option value="">선택</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                  <option value="23">23</option>
-                </select>
-                <label for="occurrenceSelectHour">시</label>
-                <!-- 분 -->
-                <select name="occurrence__SelectMinute" id="occurrenceSelectMinute">
-                  <option value="">선택</option>
-                  <option value="10">10</option>
-                  <option value="20">20</option>
-                  <option value="30">30</option>
-                  <option value="40">40</option>
-                  <option value="50">50</option>
-                </select>
-                <label for="occurrenceSelectMinute">분경</label>
+                <span class="form_detail_title">문의유형</span>
+                <div class="form_detail_div">
+                  <input type="radio" id="userInquiryType1" name="user__InquiryType" value="칭찬" />
+                  <label for="userInquiryType1">칭찬</label>
+                  <input type="radio" id="userInquiryType2" name="user__InquiryType" value="불만" />
+                  <label for="userInquiryType2">불만</label>
+                  <input type="radio" id="userInquiryType3" name="user__InquiryType" value="제안" />
+                  <label for="userInquiryType3">제안</label>
+                </div>
+              </div>
+              <div class="form_detail">
+                <span class="form_detail_title">답변 알림 서비스</span>
+                <div class="form_detail_div">
+                  <input type="radio" id="userAnwserNo" name="user__Answer" value="받지않음" />
+                  <label for="userAnwserNo">받지않음</label>
+                  <input type="radio" id="userAnwser1" name="user__Answer" value="문자" />
+                  <label for="userAnwser1">문자 답변</label>
+                  <input type="radio" id="userAnwser2" name="user__Answer" value="이메일" />
+                  <label for="userAnwser2">이메일 답변</label>
+                  <input type="radio" id="userAnwser3" name="user__Answer" value="전화" />
+                  <label for="userAnwser3">전화 답변</label>
+                </div>
+              </div>
+              <div class="form_detail">
+                <label for="userBranch">매장명</label>
+                <input type="text" id="userBranch" name="user__Branch" value="" />
+                <!-- <input type="button" id="userBranchSearchBtn" name="user__BranchSearchBtn" value="매장찾기" onclick="location.href='./subpage_branch_search_1280.html'" /> -->
+                <input type="button" value="매장찾기" id="userBranchSearchBtn" onclick="window.open('https://paikdabang.com/store/')" />
+              </div>
+              <div class="form_detail">
+                <span class="form_detail_title occurence">발생일시</label>
+                <div class="form_detail_div">
+                  <!-- 년 -->
+                  <select name="occurrence__SelectYear" id="occurrenceSelectYear">
+                    <option value="">선택</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                  </select>
+                  <label for="occurrenceSelectYear">년</label>
+                  <!-- 월 -->
+                  <select name="occurrence__SelectMonth" id="occurrenceSelectMonth">
+                    <option value="">선택</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                  <label for="occurrenceSelectMonth">월</label>
+                  <!-- 일 -->
+                  <select name="occurrence__SelectDay" id="occurrenceSelectDay">
+                    <option value="">선택</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                  </select>
+                  <label for="occurrenceSelectDay">일</label>
+                  <!-- 구분선 :after 처리 -->
+                  <!-- 시 -->
+                  <select name="occurrence__SelectHour" id="occurrenceSelectHour">
+                    <option value="">선택</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                  </select>
+                  <label for="occurrenceSelectHour">시</label>
+                  <!-- 분 -->
+                  <select name="occurrence__SelectMinute" id="occurrenceSelectMinute">
+                    <option value="">선택</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                  </select>
+                  <label for="occurrenceSelectMinute">분경</label>
+                </div>
               </div>
               <div class="form_detail">
                 <label for="userTitle">제목</label>
@@ -413,14 +440,20 @@
               </div>
               <div class="form_detail">
                 <label for="userContent">내용</label>
-                <textarea name="user__Content" id="userContent" cols="30" rows="10"></textarea>
-                <!-- <label for="userContent"></label>
-                <input type="text" id="userContent" name="user__Content" value="" /> -->
+                <div class="form_detail_div">
+                  <textarea name="user__Content" id="userContent" cols="30" rows="10"></textarea>
+                </div>
               </div>
+              <!-- https://webclub.tistory.com/367 -->
+              <!-- https://helloinyong.tistory.com/275 -->
               <div class="form_detail">
-                <label for="userFile">파일첨부</label>
-                <!-- https://helloinyong.tistory.com/275 -->
-                <input type="file" id="userFile" name="user__File" value="" />
+                <span class="form_detail_title">파일첨부</span>
+                <div class="form_detail_div file_upload">
+                  <input class="blind" type="file" id="userFile" name="user__File" value="" />
+                  <label for="userFile">
+                    <span class="blind">파일을 첨부하려면 클릭하세요.</span>
+                  </label>
+                </div>
               </div>
             </fieldset>
             <!-- 개인정보 -->
@@ -429,46 +462,51 @@
               <!-- 개인정보 처리방침 -->
               <div class="form_agreement_inner">
                 <span>개인정보 보호를 위한 이용자 동의서</span>
-                <div>
-                  <button type="button">개인정보 처리방침 전문보기</button>
+                <div class="agreement_details clearfix">
+                  <div>
+                    <button type="button">개인정보 처리방침 전문보기</button>
+                  </div>
+                  <div>
+                    <p>
+                      빽다방 창업문의 및 설명회 신청 관련 개인정보 수집동의 <span class="red_text">(필수)</span><br />
+                      1. 개인정보의 수집 및 이용 목적<br />
+                      &nbsp;- 빽다방 브랜드 창업 문의에 대한 원활한 상담<br />
+                      &nbsp;- 빽다방 창업 관련 정보 안내<br />
+                      2. 수집하는 개인정보의 항목<br />
+                      &nbsp;- 이름, 휴대폰번호, 이메일, 창업희망지역, 점포소유여부(보유 시, 점포주소지)<br />
+                      3. 개인정보 보유 및 이용기간<br />
+                      &nbsp;- 이용 목적 달성 후, 내부규정에 따라 보관 및 지체없이 파기<br />
+                      &nbsp;※ 귀하께서는 위 개인정보 수집, 이용에 대한 동의를 거부할 권리가 있으며, 동의 거부 시에는 창업상담 서비스 이용에 제한이 될 수 있습니다.
+                    </p>
+                    <input type="radio" id="userAgree1" name="user__Agreement1" value="동의 O" checked />
+                    <label for="userAgree1">동의합니다.</label>
+                    <input type="radio" id="userDisagree1" name="user__Agreement1" value="동의 X" />
+                    <label for="userDisagree1">동의하지 않습니다.</label>
+                  </div>
                 </div>
-                <div>
-                  <p>
-                    빽다방 창업문의 및 설명회 신청 관련 개인정보 수집동의 <span class="red_text">(필수)</span><br />
-                    1. 개인정보의 수집 및 이용 목적
-                    - 빽다방 브랜드 창업 문의에 대한 원활한 상담
-                    - 빽다방 창업 관련 정보 안내
-                    2. 수집하는 개인정보의 항목
-                    - 이름, 휴대폰번호, 이메일, 창업희망지역, 점포소유여부(보유 시, 점포주소지)
-                    3. 개인정보 보유 및 이용기간
-                    - 이용 목적 달성 후, 내부규정에 따라 보관 및 지체없이 파기
-                    ※ 귀하께서는 위 개인정보 수집, 이용에 대한 동의를 거부할 권리가 있으며, 동의 거부 시에는 창업상담 서비스 이용에 제한이 될 수 있습니다.
-                  </p>
-                  <input type="checkbox" id="userAgree1" name="user__Agree1" value="" />
-                  <label for="userAgree1">동의합니다.</label>
-                  <input type="checkbox" id="userDisagree1" name="user__Disagree1" value="" />
-                  <label for="userDisagree1">동의하지 않습니다.</label>
-                </div>
-              </div>
+              </div><!-- // .form_agreement_inner -->
+
               <!-- 마케팅 활용 -->
               <div class="form_agreement_inner">
                 <span>마케팅 활용 동의서</span>
-                <div>
-                  <button type="button">마케팅 활용 동의서 보기</button>
+                <div class="agreement_details clearfix">
+                  <div>
+                    <button type="button">마케팅 활용 동의서 보기</button>
+                  </div>
+                  <div>
+                    <p>
+                      마케팅 정보제공 용도로의 이용 동의 <span class="red_text">(선택)</span><br />
+                      수집한 위 개인정보를 빽다방에서 제공하는 창업관련 자료 및 정보수신에 동의합니다.<br />
+                      &nbsp;※선택 사항 미 동의에 따른 상담서비스 이용 제한, 불이익은 없습니다.<br />
+                      다만, 더본코리아에서 제공하는 창업자료 및 제안정보 등은 제공받으실 수 없습니다.
+                    </p>
+                    <input type="radio" id="userAgree2" name="user__Agreement2" value="동의 O" checked />
+                    <label for="userAgree2">동의합니다.</label>
+                    <input type="radio" id="userDisagree2" name="user__Agreement2" value="동의 X" />
+                    <label for="userDisagree2">동의하지 않습니다.</label>
+                  </div>
                 </div>
-                <div>
-                  <p>
-                    마케팅 정보제공 용도로의 이용 동의 <span class="red_text">(선택)</span><br />
-                    수집한 위 개인정보를 빽다방에서 제공하는 창업관련 자료 및 정보수신에 동의합니다.
-                    ※선택 사항 미 동의에 따른 상담서비스 이용 제한, 불이익은 없습니다.
-                    다만, 더본코리아에서 제공하는 창업자료 및 제안정보 등은 제공받으실 수 없습니다.
-                  </p>
-                  <input type="checkbox" id="userAgree2" name="user__Agree2" value="" />
-                  <label for="userAgree2">동의합니다.</label>
-                  <input type="checkbox" id="userDisagree2" name="user__Disagree2" value="" />
-                  <label for="userDisagree2">동의하지 않습니다.</label>
-                </div>
-              </div>
+              </div><!-- // .form_agreement_inner -->
             </fieldset>
             <fieldset class="form_report_btns"> 
               <legend class="blind">작성을 마친 후, </legend>
