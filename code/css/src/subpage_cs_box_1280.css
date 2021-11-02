@@ -758,8 +758,13 @@ address {
 
     /* input + label -> wrapper 역할의 div들... */
     .form_detail {
+      /* 팁! 플로트로 해결하기. 포지션 쓸 이유 없음... 
+      또는 inline-block 으로 해결도 가능!!!!!!!!!
+      다시!!! */
       position: relative;
-
+      height: auto;
+      /* 팁! min-height를 정해줘야함 */
+      /* min-height: 40px; */
       margin: 40px 0px 0px 3px;
     }
     /* 폼태그 label 스타일링 */

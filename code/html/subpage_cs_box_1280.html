@@ -38,6 +38,7 @@
 
             <!-- .gnb -->
             <ul class="gnb clearfix">
+              <!-- tip! li의 크기를 호버했을 때 넓어지는 크기만큼 픽스시키기! -->
               <li>
                 <div class="title_link"><a href="#">빽다방</a></div>
                 <div class="gnb_sub_nav">
@@ -312,6 +313,7 @@
         <!-- .cs_report_form -->
         <div class="cs_report_form">
           <form action="#" method="POST">
+            <!-- form_heading은 form 태그 밖으로 빼기 -->
             <fieldset class="form_heading">
               <legend>
                 고객의 소리 접수
@@ -363,10 +365,15 @@
                 </div>
               </div>
               <div class="form_detail">
-                <span class="form_detail_title">답변 알림 서비스</span>
-                <div class="form_detail_div">
+                <!-- label은 하나의 인풋에 여러개 가능.
+                대신, aria-hidden으로 처리해서 읽지 않게 명시.
+                및 aria-desciption으로 e.g. 받지 않음에 내용 작성해서 
+              스크린리더가 읽을 수 있게 처리. -->
+                <!-- <label for="userAnwserNo" role="application" aria-roledescription="답변 알림 서비스 기본은 받지 않음 입니다" class="form_detail_title">답변 알림 서비스</label> -->
+                <label for="userAnwserNo" class="form_detail_title">답변 알림 서비스</label>
+                <div class="form_detail_div"> 
                   <input type="radio" id="userAnwserNo" name="user__Answer" value="받지않음" />
-                  <label for="userAnwserNo">받지않음</label>
+                  <label for="userAnwserNo" aria-hidden="true">받지않음</label>
                   <input type="radio" id="userAnwser1" name="user__Answer" value="문자" />
                   <label for="userAnwser1">문자 답변</label>
                   <input type="radio" id="userAnwser2" name="user__Answer" value="이메일" />
@@ -386,15 +393,19 @@
                 <div class="form_detail_div">
                   <!-- 년 -->
                   <select name="occurrence__SelectYear" id="occurrenceSelectYear">
-                    <option value="">선택</option>
+                    <!-- 선택 option에는 벨류값 필요없음. -->
+                    <option>선택</option>
                     <option value="2020">2020</option>
                     <option value="2019">2019</option>
                     <option value="2018">2018</option>
                   </select>
-                  <label for="occurrenceSelectYear">년</label>
+                  <!-- 팁! label안에 span 을 블라인드 처리해서 스크린리더 상 들릴 내용 고려화기! -->
+                  <label for="occurrenceSelectYear">년
+                    <span class="blind">도를 선택하세요</span>
+                  </label>
                   <!-- 월 -->
                   <select name="occurrence__SelectMonth" id="occurrenceSelectMonth">
-                    <option value="">선택</option>
+                    <option>선택</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -523,6 +534,7 @@
                       &nbsp;- 이용 목적 달성 후, 내부규정에 따라 보관 및 지체없이 파기<br />
                       &nbsp;※ 귀하께서는 위 개인정보 수집, 이용에 대한 동의를 거부할 권리가 있으며, 동의 거부 시에는 창업상담 서비스 이용에 제한이 될 수 있습니다.
                     </p>
+                    <!-- 팁! 소비자의 입장에서는 동의하지 않습니다가 먼저 오는 것이 맞음... -->
                     <input type="radio" id="userAgree1" name="user__Agreement1" value="동의 O" checked />
                     <label for="userAgree1">동의합니다.</label>
                     <input type="radio" id="userDisagree1" name="user__Agreement1" value="동의 X" />
@@ -539,12 +551,15 @@
                     <button type="button">마케팅 활용 동의서 보기</button>
                   </div>
                   <div>
+                    <!-- h3/4 > dl > ∂(dt+dd) *3/4 + p (※ .... 이거 바꾸기!) -->
                     <p>
                       마케팅 정보제공 용도로의 이용 동의 <span class="red_text">(선택)</span><br />
                       수집한 위 개인정보를 빽다방에서 제공하는 창업관련 자료 및 정보수신에 동의합니다.<br />
-                      &nbsp;※선택 사항 미 동의에 따른 상담서비스 이용 제한, 불이익은 없습니다.<br />
+                      <!-- ※ -> 바꾸기.... -->
+                      &nbsp; ※ 선택 사항 미 동의에 따른 상담서비스 이용 제한, 불이익은 없습니다.<br />
                       다만, 더본코리아에서 제공하는 창업자료 및 제안정보 등은 제공받으실 수 없습니다.
                     </p>
+                    <!-- 팁! 소비자의 입장에서는 동의하지 않습니다가 먼저 오는 것이 맞음... -->
                     <input type="radio" id="userAgree2" name="user__Agreement2" value="동의 O" checked />
                     <label for="userAgree2">동의합니다.</label>
                     <input type="radio" id="userDisagree2" name="user__Agreement2" value="동의 X" />
@@ -552,10 +567,15 @@
                   </div>
                 </div>
               </div><!-- // .form_agreement_inner -->
+
+              <!-- 팁! 모달창 자리! 이 필드셋 영역 기준/안에서 제일 위의 코드 또는 제일 밑에 넣어주면 됨. -->
+
             </fieldset>
             <fieldset class="form_report_btns"> 
               <legend class="blind">작성을 마친 후, </legend>
               <div class="form_report_btns_wrapper clearfix">
+                <!-- 팁! 소비자의 입장에서는 취소가 먼저 오는 것이 맞음... -->
+                <!--     + 색상 대비 확인할 것!  -->
                 <button type="button" id="formReportSendBtn">접수하기</button>
                 <button type="button" id="formReportCancelBtn">취소</button>
               </div>
@@ -600,8 +620,8 @@
 
       // -------------------------------------------------------- //
       // 헤더 메뉴바 호버 및 포커스 적용 시 .gnb 보이게 이벤트 처리
-      var GNB = document.querySelector('.gnb');
-      var 
+      // var GNB = document.querySelector('.gnb');
+      // var 
 
     </script>
 </body>
