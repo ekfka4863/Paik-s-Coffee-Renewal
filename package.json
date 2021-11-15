@@ -1,0 +1,19 @@
+{
+  "name": "paikscoffeerenewal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekfka4863/PaiksCoffeeRenewal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ekfka4863/PaiksCoffeeRenewal/issues"
+  },
+  "homepage": "https://github.com/ekfka4863/PaiksCoffeeRenewal#readme"
+}
