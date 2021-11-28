@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!-- main.html -->
+<html lang="ko-KR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="../js/common/modernizr-custom.js"></script>
+
+  <link rel="stylesheet" href="../css/common/reset.css">
+  <link rel="stylesheet" href="../css/common/common.css">
+  <link rel="stylesheet" href="../css/src/main.css">
+  <title>빽다방</title>
+  <link rel="shortcut icon" href="../favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+</head>
+
+<body>
+    <!-- layout -->
+    <div id="wrap">
+
+      <!-- header -->
+      <header id="headBox">
+        <div class="head_area">
+          <h1>
+            <a href="./main.html"><span class="blind">빽다방에 오신것을 환영합니다.</span></a>
+          </h1>
+
+          <!-- 네비게이션 -->
+          <nav class="navigation">
+            <h2 class="blind">navigation</h2>
+
+            <!-- .gnb -->
+            <ul class="gnb">
+              <li><a href="#">빽다방</a></li>
+              <li><a href="#">메뉴</a></li>
+              <li><a href="#">소식</a></li>
+              <li><a href="#">매장안내</a></li>
+              <li><a href="#">창업안내</a></li>
+              <li><a href="#">고객의소리</a></li>
+              <li><a href="#">패밀리사이트</a></li>
+            </ul>
+
+            <!-- .search_box -->
+            <div class="search_bar_area">
+              <div class="search_btn">
+                <button type="button"><i class="fas fa-search"><span class="blind">검색창 열기</span></i></button>
+              </div>
+              <form method="GET" action="#">
+                <fieldset>
+                  <legend>검색</legend>
+                    <label for="searchBar" class="blind"><span aria-hidden="true">검색어를 입력해 주세요</span></label>
+                    <!-- <p id="labelHint" class="blind">어를 입력해 주세요</p> -->
+                    <!-- <input type="text" id="searchBar" name="search__Bar" value="" aria-describedby="labelHint"/> -->
+                    <input type="text" id="searchBar" name="search__Bar" value="" placeholder="검색어를 입력해 주세요" />
+                    <button type="submit">검색</button>
+                </fieldset>
+              </form>
+          </div><!--// .search_bar_area -->
+
+          </nav>
+        </div>
+      </header>
+
+
+      <!-- main -->
+      <main>
+        <section id="viewBox"></section>
+        <article id="productBox"></article>
+        <article id="eventBox"></article>
+        <article id="snsBox"></article>
+        <article id="familysiteBox"></article>
+        <aside id="oftenSearchedBtns"></aside>
+      </main>
+
+      <!-- footer -->
+      <footer id="footBox">
+        <h2 class="blind">
+          <a href="./main.html"><span class="blind">더본코리아</span></a>
+        </h2>
+
+        <div class="foot_box_content">
+          <div class="foot_box_company_info">
+            <address>
+              <ul>
+                <li>(주)더본코리아</li>
+                <li>사업자등록번호 211-86-00870</li>
+                <li>대표이사 백종원</li>
+                <li>주소: 서울시 강남구 봉은사로 1길 39 유성빌딩 5~6층</li>
+                <li>팩스: 02-511-3864</li>
+                <li>본사 대표전화: 02-549-3864</li>
+                <li>가맹상담전화: 02-3447-0410</li>
+                <li>고객센터: 1544-2360</li>
+              </ul>
+            </address>
+          </div>
+          <div class="foot_box_etc">
+            <div class="family_sites">
+              <button type="button" class="drop_down_sites">패밀리사이트 바로가기</button>
+              <div>
+                <!-- ul>(li>a[target=_blank]{사이트이름_$})*14 -->
+              </div>
+            </div>
+            <div class="sns_set">
+              <a href="https://center-pf.kakao.com/m/login" class="chat_icon">
+                <span class="blind">카카오톡 빽다방 채널 바로가기</span>
+              </a>
+              <a href="https://m.facebook.com/ipaikscoffee/?locale2=ms_MY&__tn__=C-R" class="facebook_icon">
+                <span class="blind">페이스북 빽다방 계정 바로가기</span>
+              </a>
+              <a href="https://www.instagram.com/paikscoffee_official/?hl=ko" class="instagram_icon">
+                <span class="blind">인스타그램 빽다방 계정 바로가기</span>
+              </a>
+            </div>
+          </div><!--// .foot_box_etc -->
+          <div class="foot_box_copyright">
+            <p>Copyright &copy; 2022 All rights reserved by ekfka4863</p>
+          </div><!--// .foot_box_copyright -->
+        </div><!--// .foot_box_content -->
+      </footer>
+
+
+      <!-- .go_to_top_btn 버튼 구현 -->
+      <button type="button" class="go_to_top_btn">
+        <i class=""></i>
+        top
+        <!-- capitalise 해주기! -->
+      </button><!--// .go_to_the_btn -->
+    </div><!--// #wrap -->
+    
+
+    <!-- script -->
+    <!-- <script src="../js/src/"></script> -->
+</body>
+</html>
