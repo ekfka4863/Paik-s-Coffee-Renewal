@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="../css/common/reset.css">
   <link rel="stylesheet" href="../css/common/common.css">
+  <link rel="stylesheet" href="../font/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../css/src/main.css">
   <title>빽다방</title>
   <link rel="shortcut icon" href="../favicon.png" type="image/png">
@@ -28,7 +29,7 @@
           </h1>
 
           <!-- 네비게이션 -->
-          <nav class="navigation">
+          <nav class="navigation clearfix">
             <h2 class="blind">navigation</h2>
 
             <!-- .gnb -->
@@ -39,7 +40,7 @@
               <li><a href="#">매장안내</a></li>
               <li><a href="#">창업안내</a></li>
               <li><a href="#">고객의소리</a></li>
-              <li><a href="#">패밀리사이트</a></li>
+              <li><a href="#">패밀리사이트</a></li> 
             </ul>
 
             <!-- .search_box -->
@@ -47,7 +48,7 @@
               <div class="search_btn">
                 <button type="button"><i class="fas fa-search"><span class="blind">검색창 열기</span></i></button>
               </div>
-              <form method="GET" action="#">
+              <form method="GET" action="#" hidden>
                 <fieldset>
                   <legend>검색</legend>
                     <label for="searchBar" class="blind"><span aria-hidden="true">검색어를 입력해 주세요</span></label>
@@ -57,10 +58,16 @@
                     <button type="submit">검색</button>
                 </fieldset>
               </form>
-          </div><!--// .search_bar_area -->
-
+            </div><!--// .search_bar_area -->  
           </nav>
-        </div>
+        
+          <!-- smartphone이랑 tablet의 햄버거 버튼 -->
+          <div class="hamburger_menu_btn">
+            <button type="button">
+              <i class="fas fa-bars"><span class="blind">더 많은 메뉴를 보고싶으시면 클릭하십시오</span></i>
+            </button>
+          </div><!--// .hamburger_menu_btn -->
+        </div><!--// .head_area -->
       </header>
 
 

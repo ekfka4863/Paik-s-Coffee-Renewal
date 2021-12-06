@@ -1,0 +1,64 @@
+// main.scss
+/* main.css */
+
+@import "../common/variable";
+@import "../common/mixin";
+// -------------------------------------------
+// @import "../page/base/headBox";
+
+  // @import "../page/main/slideBox";
+  // @import "../page/main/newBox";
+  // @import "../page/main/commercialBox";
+  // @import "../page/main/bestBox";
+  // @import "../page/main/galleryBox";
+  // @import "../page/main/sponsorBox";
+
+
+// @import "../page/base/footBox";
+
+// --------------------------------
+  // $headH:0;
+  // $headH2:0;
+// --------------------------------
+
+#wrap {
+  width:100%;  
+  height:auto; 
+  min-height:2000px; 
+  background-color: #ddd;
+  @include mobile{ min-width:320px;  background-color: #fda; }
+  @include tablet{ background-color: #adf;  }
+  @include pc{ background-color: #fdf;  }
+}// #wrap
+
+// -------------------------------------------
+#headBox {
+  width: 100%;
+  height: 130px;
+  padding: 30px 80px 40px;
+  background-color: $color_white;  
+  @at-root .head_area {
+    background-color: #e1a;
+  h1 {
+    width: 188px;
+    height: 60px;
+    background-color: #eee;
+    & a {
+      @include full;
+    }
+  }// h1 
+
+  @at-root .navigation {
+    .gnb {
+      display: flex;
+
+      // 여기부터 
+    }
+  }// .navigation
+  }// .head_area
+}
+
+#viewBox {
+  width: 100%; 
+  height: 700px;
+}
